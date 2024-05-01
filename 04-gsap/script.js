@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import gsap from "gsap";
 
 // Canvas
 const canvas = document.querySelector(".webgl");
@@ -12,6 +13,13 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: "yellow" });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+
+// gsap
+// gsap.to(cube.rotation, { repeat: -1 });
+gsap.to(cube.position, { duration: 1, delay: 1, x: 1 });
+gsap.to(cube.position, { duration: 1, delay: 2, y: -1 });
+gsap.to(cube.position, { duration: 1, delay: 3, x: 0 });
+gsap.to(cube.position, { duration: 1, delay: 4, y: 0 });
 
 // Camera
 const aspect = {
@@ -32,13 +40,6 @@ const clock = new THREE.Clock();
 const animate = () => {
   // Get elapsed time
   const elapsedTime = clock.getElapsedTime();
-
-  // Update rotation
-  cube.rotation.y = elapsedTime * Math.PI * 2;
-
-  // Update position
-  cube.position.x = Math.sin(elapsedTime * 2);
-  cube.position.y = Math.cos(elapsedTime * 2);
 
   // Renderer
   renderer.render(scene, camera);
