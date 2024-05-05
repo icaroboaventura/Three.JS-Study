@@ -20,7 +20,7 @@ const displacementTexture = textureLoader.load("/texture/displacementMap.jpg");
 
 //---------------------------------------CubeTextureLoader-----------------------------------
 const cubeTextureLoader = new THREE.CubeTextureLoader();
-const envTexture = cubeTextureLoader.load(["/texture/env/px.png", "/texture/env/nx.png", "/texture/env/py.png", "/texture/env/ny.png", "/texture/env/pz.png", "/texture/env/nz.png"]);
+const envTexture = cubeTextureLoader.load(["./public/static/texture/env/px.png", "./public/static/texture/env/nx.png", "./public/static/texture/env/py.png", "./public/static/texture/env/ny.png", "./public/static/texture/env/pz.png", "./public/static/texture/env/nz.png"]);
 scene.background = envTexture;
 
 //------------------------------------------Resizing------------------------------------------
