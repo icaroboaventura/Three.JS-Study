@@ -1,0 +1,4 @@
+{
+    "python.analysis.diagnosticSeverityOverrides": {},
+    "colorize.languages": ["typescript", "javascript", "css", "scss"]
+}
